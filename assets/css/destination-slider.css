@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* MAIN SLIDER */
+.destination-slider {
+  position: relative;
+  width: 100%;
+  height: 55vh; /*change*/
+  overflow: hidden;
+}
+
+/* SLIDES WRAP */
+.destination-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(.77, 0, .18, 1);
+}
+
+/* SINGLE SLIDE */
+.destination-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE WITH ZOOM ANIMATION */
+.destination-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s ease;
+}
+
+.destination-slide.active img {
+  transform: scale(1.1);
+}
+
+.destination-card h3,
+.destination-card .destination-title {
+  text-align: center;
+  width: 100%;
+}
+
+
+/* LEFT TOP TITLE */
+.destination-slide-title {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+}
+
+.destination-slide.active .destination-slide-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BOTTOM NAME STRIP */
+.destination-slider-tabs {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+.destination-slider-tab {
+  padding: 9px 12px; /*change tab*/
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 6px;
+  opacity: 0.35;
+  transform: scale(0.9);
+  transition: 0.6s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.destination-slider-tab.active {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px) {
+  .destination-slide-title {
+    font-size: 36px;
+    left: 40px;
+  }
+}
+
+@media(max-width:768px) {
+  .destination-slide-title {
+    font-size: 28px;
+    left: 24px;
+    top: 40px;
+  }
+
+  .destination-slider-tabs {
+    bottom: 24px;
+  }
+
+  .destination-slider-tab {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media(max-width:430px) {
+  .destination-slide-title {
+    font-size: 22px;
+    top: 20px;
+    left: 16px;
+  }
+
+  .destination-slider-tabs {
+    bottom: 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .destination-slider-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .destination-slide img {
+    object-position: center;
+  }
+}
+
+/* ===============================
+   LARGE DEVICES (1200px and up)
+================================= */
+/* @media (min-width: 1200px) {
+  .destination-slider {
+    height: 65vh;
+  }
+
+  .destination-slide-title {
+    font-size: 56px;
+  }
+} */
+
+
+/* ===============================
+   LAPTOPS (1024px and below)
+================================= */
+@media (max-width: 1024px) {
+
+  .destination-slider {
+    height: 55vh;
+  }
+
+  .destination-slide-title {
+    font-size: 36px;
+    left: 40px;
+    top: 50px;
+  }
+
+  .destination-slider-tab {
+    font-size: 14px;
+  }
+}
+
+
+/* ===============================
+   TABLETS (768px and below)
+================================= */
+@media (max-width: 768px) {
+
+  .destination-slider {
+    height: 45vh;
+  }
+
+  .destination-slide-title {
+    font-size: 28px;
+    left: 24px;
+    top: 40px;
+  }
+
+  .destination-slider-tabs {
+    bottom: 24px;
+    gap: 12px;
+  }
+
+  .destination-slider-tab {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+
+/* ===============================
+   MOBILE DEVICES (576px and below)
+================================= */
+@media (max-width: 576px) {
+
+  .destination-slider {
+    height: 40vh;
+  }
+
+  .destination-slide-title {
+    font-size: 22px;
+    top: 20px;
+    left: 16px;
+    line-height: 1.3;
+  }
+
+  .destination-slider-tabs {
+    bottom: 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .destination-slider-tab {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .destination-slide img {
+    object-position: center;
+  }
+}
+
+
+/* ===============================
+   EXTRA SMALL DEVICES (360px and below)
+================================= */
+@media (max-width: 360px) {
+
+  .destination-slider {
+    height: 35vh;
+  }
+
+  .destination-slide-title {
+    font-size: 18px;
+  }
+
+  .destination-slider-tab {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}

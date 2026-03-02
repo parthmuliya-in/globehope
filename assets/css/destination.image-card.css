@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+}
+
+/* ================= TITLE ================= */
+
+.destination-section {
+  padding-top: 50px;
+}
+
+/* ================= GRID ================= */
+.destination-grid {
+  max-width: 1300px;
+  margin: auto;
+  padding: 50px 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+.destination-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* ================= IMAGE WITH INNER BORDER ================= */
+.destination-img {
+  width: 230px;
+  height: 310px;
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.destination-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  transition: transform 0.4s ease;
+}
+
+/* INNER FRAME BORDER */
+.destination-img::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+
+/* ================= HOVER EFFECT ================= */
+.destination-card:hover .destination-img {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card:hover .destination-img img {
+  transform: scale(1.05);
+}
+
+/* ================= TEXT ================= */
+.destination-heading {
+  margin-top: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #141414;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.destination-heading:hover {
+  color: #cb5626;
+}
+
+/* ================= BUTTON ================= */
+
+/* BUTTON (INSIDE BG) */
+.destination-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.destination-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 36px;
+  border: 2px solid #cb5725;
+  color: #cb5725;
+  background: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 13px;
+  transition: color 0.35s ease;
+  z-index: 1;
+}
+
+.destination-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #cb5725;
+  transition: left 0.45s ease;
+  z-index: -1;
+}
+
+.destination-btn:hover::before {
+  left: 0;
+}
+
+.destination-btn:hover {
+  background: #cb5725;
+  color: #fff;
+}
+
+/* ================= HIDE EXTRA ================= */
+.destination-card.hidden {
+  display: none;
+}
+
+
+.icons-section-wraper .why-choose-title {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1200px) {
+  .destination-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width:768px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:480px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+}

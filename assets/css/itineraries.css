@@ -1,0 +1,472 @@
+/* ******************************************************************************************** */
+/* HERO */
+.hero {
+    height: 55vh;
+    background: url("../images/itineraries-images/hero-bg.jpeg") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+.hero-content {
+    position: relative;
+    text-align: center;
+
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* **************************************************************** */
+
+/* TITLE */
+.process-title {
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 40px;
+}
+
+.process-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1f1f1f;
+    letter-spacing: 0.5px;
+}
+
+.animated-border {
+    width: 130px;
+    height: 4px;
+    margin: 15px auto 0;
+    background: linear-gradient(90deg, #cb5626, #ff9a6a);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-border::after {
+    content: '';
+    position: absolute;
+    left: -40%;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.6;
+    animation: moveLine 2s infinite;
+}
+
+@keyframes moveLine {
+    0% {
+        left: -40%
+    }
+
+    100% {
+        left: 120%
+    }
+}
+
+
+/* ================================================ ITINARARIES TABS SECTION ===================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background: #f9fafb;
+    color: #1f1f1f
+}
+
+/* ===== TABS ===== */
+.itineraries-tabs-wrapper {
+    max-width: 1200px;
+    margin: 44px auto 50px;
+    text-align: center
+}
+
+.itineraries-tabs {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.itineraries-tab-btn {
+    padding: 14px 34px;
+    color: #cb5725;
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    /* box-shadow: 0 8px 22px rgba(0, 0, 0, .08); */
+    transition: .3s;
+    border: 2px solid #cb5725;
+}
+
+.itineraries-tab-btn:hover,
+.itineraries-tab-btn.itineraries-active {
+    background: #cb5725;
+    color: #fff;
+    transform: translateY(-3px)
+}
+
+/* ===== CONTENT ===== */
+.itineraries-tab-content {
+    display: none
+}
+
+.itineraries-tab-content.itineraries-active {
+    display: block;
+    animation: itinerariesFadeUp 1s cubic-bezier(.16, 1, .3, 1)
+}
+
+@keyframes itinerariesFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+/* ===== GRID ===== */
+.itineraries-cards-grid {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px
+}
+
+/* ===== CARD ===== */
+.itineraries-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .08);
+    transition: .3s;
+    display: flex;
+    flex-direction: column
+}
+
+.itineraries-card:hover {
+    transform: translateY(-20px)
+}
+
+.itineraries-card-img {
+    height: 260px;
+    overflow: hidden
+}
+
+.itineraries-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .9s
+}
+
+.itineraries-card:hover img {
+    transform: scale(1.12)
+}
+
+.itineraries-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.itineraries-card-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.itineraries-card-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 18px
+}
+
+
+
+
+
+
+.itineraries-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 28px;
+    background: #ffffff;
+    color: #cb5725;
+    border: 1px solid #cb5725;
+    text-decoration: none;
+    transition: color 0.45s ease;
+    z-index: 1;
+    text-align: center;
+}
+
+.itineraries-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #cb5725;
+    transition: left 0.45s ease;
+    z-index: -1;
+
+}
+
+.itineraries-btn:hover::before {
+    left: 0;
+}
+
+.itineraries-btn:hover {
+    color: #fff;
+}
+
+
+
+
+
+
+/* ===== REVEAL ===== */
+.itineraries-reveal {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: 1.2s cubic-bezier(.16, 1, .3, 1)
+}
+
+.itineraries-reveal.itineraries-active {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+@media(max-width:900px) {
+    .itineraries-cards-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:520px) {
+    .itineraries-cards-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ================= STICKY FILTER ================= */
+
+.itineraries-tabs-wrapper {
+    position: sticky;
+    top: 49px;
+    z-index: 999;
+    /* background: #f9fafb; same as body background */
+    padding: 20px 0;
+}
+
+/* Optional: slight shadow when sticky 
+.itineraries-tabs-wrapper.sticky-active {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}*/
+
+/* ================= MOBILE FILTER TOGGLE ================= */
+
+.mobile-filter-toggle {
+    display: none;
+    justify-content: space-between;
+    margin: 10px;
+    /* top: 100px; */
+    align-items: center;
+    padding: 14px 20px;
+    color: #cb5725;
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+    border: 2px solid #cb5725;
+}
+
+.mobile-filter-toggle i {
+    font-size: 16px;
+}
+
+/* Mobile View */
+@media(max-width:768px) {
+
+    .mobile-filter-toggle {
+        display: flex;
+    }
+
+    .itineraries-tabs {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+        margin: 10px;
+        animation: fadeDown .3s ease;
+    }
+
+    .itineraries-tabs.active {
+        display: flex;
+    }
+
+    .itineraries-tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+/* ================= DESKTOP STICKY TABS ================= */
+
+@media(min-width: 992px){
+
+    .itineraries-tabs-wrapper{
+        position: sticky;
+        top: 86px;
+        z-index: 999;
+        background: #f9fafb; /* same as body */
+        padding: 20px 0;
+        transition: box-shadow .3s ease, padding .3s ease;
+    }
+
+    /* Shadow effect when sticky active */
+    .itineraries-tabs-wrapper.sticky-active{
+        /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); */
+        padding: 14px 0;
+    }
+
+}
+
+/* =========================================
+   LARGE SCREENS (1400px and up)
+========================================= */
+/* @media (min-width: 1400px) {
+
+    .hero {
+        height: 65vh;
+    }
+
+    .hero-content h1 {
+        font-size: 60px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+} */
+
+
+/* =========================================
+   LAPTOPS (1200px and below)
+========================================= */
+@media (max-width: 1200px) {
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================
+   TABLETS (992px and below)
+========================================= */
+@media (max-width: 992px) {
+
+    .hero {
+        height: 45vh;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================
+   MOBILE DEVICES (768px and below)
+========================================= */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 40vh;
+        background-position: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE (480px and below)
+========================================= */
+@media (max-width: 480px) {
+
+    .hero {
+        height: 36vh;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+}

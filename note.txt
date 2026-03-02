@@ -1,0 +1,76 @@
+
+
+-------- CREDENTIALS ADMIN ---------------
+Email: parthmuliya02@gmail.com
+Password: Admin@123
+
+-----
+
+
+
+root
+|-admin
+| |-api
+| |-assets
+| |-Backup
+| |-Credentials
+| |-PHPMailer
+| |-add_desination.php
+| |-add-itinerary.php
+| |-add_itinerary1.php
+| |-contac_enquiries.php
+| |-dashboard.php
+| |-delete_itinerery.php
+| |-delete-destination.php
+| |-edit_itinerary.php
+| |-header.php
+| |-login.php
+| |-logout.php
+| |-run.php
+| |-send_otp.php
+| |-verify_otp_action.php
+| |-verify_otp.php
+| |-view_destination.php
+| |-view_itineraries.php
+|-assets
+| |-css
+| |-about.css
+| |-contact.css
+| |-destination-slider.css
+| |-destination.image-card.css
+| |-details.css
+| |-itineraries.css
+| |-service.css
+| |-signup.css
+| |-style.css
+| |-images
+| |-js
+| |-about.js
+| |-contact.js
+| |-destination-hero-slider.js
+| |-details.js
+| |-itineraries.js
+| |-script.js
+| |-service.js
+| |-signup.js
+| |-travel-header.js
+|-database
+|-destination  # chaeck first add destination sucessfully
+|-include
+| |-config.php
+|-itineraries
+|-about.php
+|-contact.php
+|-destination.php
+|-details.php
+|-footer.php
+|-header.php
+|-index.php
+|-itineraries.php
+|-itinerary_details.php
+|-itinerary_details1.php
+|-main.txt
+|-note.txt
+|-refresh_captcha.php
+|-service.php
+|-signup.html

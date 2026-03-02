@@ -1,0 +1,483 @@
+
+
+/******************************************* SERVICES-BANNER ***************************************** */
+.banner{
+  height:55vh;
+  width:100%;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8%;
+}
+
+.banner-content{
+  max-width:650px;
+  color:#fff;
+  text-align:center;
+  animation: slideFade 1.3s ease forwards;
+}
+
+@keyframes slideFade{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.banner-content h1{
+  font-size:58px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+
+
+.banner-content h3{
+  font-size:31px;
+  font-weight:400;
+  margin-bottom:15px;
+}
+
+.banner-content p{
+  font-size:19px;
+  line-height:1.7;
+  opacity:0.95;
+}
+
+@media(max-width:768px){
+  .banner{
+    height:55vh; /*change*/
+    padding:0 5%;
+  }
+  .banner-content h1{
+    font-size:38px;
+  }
+}
+/* sectionj 1 end */
+
+/* section2 */
+/* ---------- Text Section ---------- */
+.text-section{
+  padding:80px 8%;
+  background:#f8f8f8;
+  text-align:center;
+}
+
+.text-section h2{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.text-section p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:800px;
+  margin:0 auto;
+}
+@media(max-width:768px){
+  .banner{
+    height:65vh;
+    padding:0 5%;
+  }
+  .banner-content h1{
+    font-size:38px;
+  }
+  .plane{
+    width:80px;
+    top:10%;
+  }
+  .text-section h2{
+    font-size:28px;
+  }
+  .text-section p{
+    font-size:16px;
+  }
+}
+/* section2 end */
+
+
+
+/******************************************* SERVICES ***************************************** */
+
+
+/******************************************* OUR SERVICES *****************************************/
+
+:root{
+  --blue:#195483;
+  --orange:#cb5626;
+}
+
+*{
+  /* margin:0;
+  padding:0;
+  box-sizing:border-box; */
+  font-family:'Poppins',sans-serif;
+}
+
+.services{
+  width:100%;
+  background:#1954831b;
+  padding:90px 15px;
+}
+
+.services-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADING */
+.services-heading-wrapper{
+  text-align:center;
+  margin-bottom:80px;
+}
+
+.services-heading-wrapper h2{
+  position:relative;
+  display:inline-block;
+  font-size:42px;
+}
+
+.services-heading-wrapper h2::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  transform:translateX(-50%);
+  width:120px;
+  height:4px;
+  background:linear-gradient(270deg,var(--blue),var(--orange),var(--blue));
+  background-size:200% 100%;
+  animation:services-gradient 3s linear infinite;
+}
+
+@keyframes services-gradient{
+  0%{background-position:0%}
+  50%{background-position:100%}
+  100%{background-position:0%}
+}
+
+.services-sub{
+  max-width:720px;
+  margin:12px auto 0;
+  margin-top: 40px;
+  color:#1b1b1b;
+}
+
+/* TIMELINE */
+.services-timeline{
+  position:relative;
+}
+
+.services-timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:2px;
+  height:100%;
+  background:var(--blue);
+}
+
+/* ITEM */
+.services-item{
+  width:50%;
+  padding:30px 40px;
+  position:relative;
+
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.services-left{ left:0; }
+.services-right{ left:50%; margin-top:40px; }
+
+.services-item + .services-item{
+  margin-top:-120px;
+}
+
+/* DOT */
+.services-item::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:15px;
+  height:15px;
+  background:var(--orange);
+  border-radius:50%;
+  border:4px solid #fff;
+  opacity:0;
+  transform:scale(0);
+  transition:.6s;
+}
+
+.services-left::before{ right:-7px; }
+.services-right::before{ left:-7px; }
+
+/* CARD */
+.services-card{
+  background:#fff;
+  height:220px; /* SAME HEIGHT */
+  padding:26px 28px;
+  border-radius:16px;
+  display:flex;
+  gap:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+  transition:.4s;
+  transform:translateY(30px);
+  opacity:0;
+}
+
+.services-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 65px rgba(0,0,0,.14);
+}
+
+/* ICON */
+.services-icon{
+  min-width:56px;
+  height:56px;
+  background:var(--blue);
+  color:#fff;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  transition:.4s;
+}
+
+.services-right .services-icon{
+  background:var(--orange);
+}
+
+.services-card:hover .services-icon{
+  transform:rotate(-6deg) scale(1.08);
+}
+
+/* TEXT */
+.services-text h3{
+  font-size:18px;
+  margin-bottom:6px;
+  color:var(--blue);
+}
+
+.services-right .services-text h3{
+  color:var(--orange);
+}
+
+.services-text p{
+  font-size:14.5px;
+  line-height:1.6;
+  color:#555;
+}
+
+/* SHOW */
+.services-item.services-show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.services-item.services-show::before{
+  opacity:1;
+  transform:scale(1);
+}
+
+.services-item.services-show .services-card{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= LARGE LAPTOPS / DESKTOP ================= */
+@media (max-width: 1200px) {
+  .services-container {
+    max-width: 1000px;
+  }
+  .services-heading-wrapper h2 {
+    font-size: 36px;
+  }
+}
+
+/* ================= TABLETS / SMALL LAPTOP ================= */
+@media (max-width: 900px) {
+  .services-timeline::before {
+    left: 18px;
+  }
+  .services-item {
+    width: 100% !important;
+    left: 0 !important;
+    margin-top: 40px !important;
+    padding-left: 55px;
+  }
+  .services-item::before {
+    left: 11px;
+    top: 28px;
+  }
+  .services-card {
+    height: auto;
+    min-height: 220px;
+  }
+}
+
+/* ================= PHONES ================= */
+@media (max-width: 768px) {
+  .services-heading-wrapper h2 {
+    font-size: 32px;
+  }
+  .services-card {
+    min-height: 200px;
+  }
+  .services-text p {
+    font-size: 14px;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 375px) {
+  .services {
+    padding: 60px 12px;
+  }
+  .services-item {
+    padding-left: 46px !important;
+  }
+  .services-card {
+    min-height: 180px;
+    padding: 18px;
+  }
+  .services-icon {
+    min-width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .services-text h3 {
+    font-size: 15px;
+  }
+  .services-text p {
+    font-size: 12.5px;
+  }
+}
+
+/* ===============================
+   LARGE DESKTOP (1400px and up)
+================================= */
+/* @media (min-width: 1400px) {
+  .banner {
+    height: 65vh;
+  }
+
+  .banner-content h1 {
+    font-size: 64px;
+  }
+
+  .banner-content h3 {
+    font-size: 34px;
+  }
+
+  .banner-content p {
+    font-size: 20px;
+  }
+} */
+
+
+/* ===============================
+   LAPTOPS (1200px and below)
+================================= */
+@media (max-width: 1200px) {
+  .banner {
+    height: 55vh;
+  }
+
+  .banner-content h1 {
+    font-size: 48px;
+  }
+
+  .banner-content h3 {
+    font-size: 26px;
+  }
+
+  .banner-content p {
+    font-size: 17px;
+  }
+}
+
+
+/* ===============================
+   TABLETS (992px and below)
+================================= */
+@media (max-width: 992px) {
+  .banner {
+    height: 45vh;
+    padding: 0 6%;
+  }
+
+  .banner-content h1 {
+    font-size: 40px;
+  }
+
+  .banner-content h3 {
+    font-size: 22px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+}
+
+
+/* ===============================
+   MOBILE DEVICES (768px and below)
+================================= */
+@media (max-width: 768px) {
+  .banner {
+    height: 42vh;
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .banner-content h3 {
+    font-size: 20px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+  }
+}
+
+
+/* ===============================
+   SMALL MOBILE (480px and below)
+================================= */
+@media (max-width: 480px) {
+  .banner {
+    height: 38vh;
+  }
+
+  .banner-content h1 {
+    font-size: 24px;
+  }
+
+  .banner-content h3 {
+    font-size: 17px;
+  }
+
+  .banner-content p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fa;
+}
+
+.container {
+
+    display: flex;
+    gap: 0px;
+    margin-bottom: 20px;
+    padding: 40px 80px;
+}
+
+.left-side {
+    flex: 2 1 60%;
+    min-width: 300px;
+    background: url('../images/sing-up.jpg') no-repeat center/cover;
+    background-size: cover;
+}
+
+.right-side {
+    flex: 1 1 35%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-container p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #cb5725;
+}
+
+.form-group .eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.captcha-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+.captcha-box {
+    flex: 1 1 30%;
+    background: #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace; /* captcha font dont remove */
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.captcha-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: translateY(-50%) rotate(-2deg);
+
+}
+
+.captcha-refresh {
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #cb5725;
+    display: flex;
+    align-items: center;
+}
+
+.captcha-input {
+
+    flex: 2 1 60%;
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 120px;
+
+}
+
+.signup-btn {
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 28px;
+    background: #ffffff;
+    color: #cb5725;
+    border: 1px solid #cb5725;
+    text-decoration: none;
+    transition: color 0.45s ease;
+    z-index: 1;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+
+/* Pseudo-element for slide effect */
+.signup-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #cb5725;
+    transition: left 0.45s ease;
+    z-index: -1;
+}
+
+/* Hover */
+.signup-btn:hover::before {
+    left: 0;
+}
+
+.signup-btn:hover {
+    color: white;
+}
+
+
+
+
+.signup-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.signup-text a {
+    color: #cb5725;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin-top: 0px;
+        padding: 20px;
+
+    }
+
+    .left-side,
+    .right-side {
+        flex: 1 1 100%;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .captcha-container {
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
+
+    .captcha-box,
+    .captcha-input {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .captcha-refresh {
+        font-size: 1rem;
+    }
+}
