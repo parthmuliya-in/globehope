@@ -209,7 +209,10 @@ if (isset($_POST['submit_contact'])) {
             <div class="captcha-wrap">
               <div class="captcha-row">
                 <div class="captcha-code" id="captchaCode">
-                  <?php echo $_SESSION['captcha']; ?>
+                  <?php 
+                  // echo $_SESSION['captcha']; 
+                  echo $_SESSION['captcha'] ?? '';
+                  ?>
                 </div>
                 <button type="button" id="refreshCaptcha"><i class="fa-solid fa-arrows-rotate"></i></button>
                 <input type="text" name="captcha_input" placeholder="Enter Captcha" required>
