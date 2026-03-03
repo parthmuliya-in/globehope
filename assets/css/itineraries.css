@@ -351,21 +351,23 @@ body {
         }
     }
 }
+
 /* ================= DESKTOP STICKY TABS ================= */
 
-@media(min-width: 992px){
+@media(min-width: 992px) {
 
-    .itineraries-tabs-wrapper{
+    .itineraries-tabs-wrapper {
         position: sticky;
         top: 86px;
         z-index: 999;
-        background: #f9fafb; /* same as body */
+        background: #f9fafb;
+        /* same as body */
         padding: 20px 0;
         transition: box-shadow .3s ease, padding .3s ease;
     }
 
     /* Shadow effect when sticky active */
-    .itineraries-tabs-wrapper.sticky-active{
+    .itineraries-tabs-wrapper.sticky-active {
         /* box-shadow: 0 8px 25px rgba(0,0,0,0.08); */
         padding: 14px 0;
     }

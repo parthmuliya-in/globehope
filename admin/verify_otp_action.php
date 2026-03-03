@@ -2,7 +2,7 @@
 include '../include/config.php';
 
 if (!isset($_SESSION['admin_temp_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 

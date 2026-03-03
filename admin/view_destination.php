@@ -31,8 +31,8 @@ $result = mysqli_query($conn, $query);
     <h2 class="page-title" style="margin:0;">View Destinations</h2>
 
     <!-- ADD DESTINATION BUTTON -->
-    <a href="add_destination.php" 
-       style="background:#cb5626; color:#fff; padding:10px 18px; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s;">
+    <a href="add_destination.php"
+        style="background:#cb5626; color:#fff; padding:10px 18px; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s;">
         <i class="fa-solid fa-plus"></i> Add Destination
     </a>
 </div>
@@ -53,15 +53,14 @@ $result = mysqli_query($conn, $query);
             </thead>
 
             <tbody>
-                <?php if(mysqli_num_rows($result) > 0) { ?>
-                    <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                <?php if (mysqli_num_rows($result) > 0) { ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                         <tr>
                             <td data-label="ID"><?php echo $row['id']; ?></td>
 
                             <td data-label="Image">
-                                <img src="../destination/<?php echo $row['image']; ?>" 
-                                     alt="<?php echo htmlspecialchars($row['alt_tag']); ?>" 
-                                     class="table-img">
+                                <img src="../destination/<?php echo $row['image']; ?>"
+                                    alt="<?php echo htmlspecialchars($row['alt_tag']); ?>" class="table-img">
                             </td>
 
                             <td data-label="Title">
@@ -73,15 +72,13 @@ $result = mysqli_query($conn, $query);
                             </td>
 
                             <td data-label="Action" class="action-cell">
-                                <a href="edit_destination.php?id=<?php echo $row['id']; ?>" 
-                                   class="icon-btn edit-btn">
-                                   <i class="fa-solid fa-pen"></i>
+                                <a href="edit_destination.php?id=<?php echo $row['id']; ?>" class="icon-btn edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
                                 </a>
 
-                                <a href="delete-destination.php?id=<?php echo $row['id']; ?>" 
-                                   class="icon-btn delete-btn"
-                                   onclick="return confirm('Are you sure you want to delete this destination?');">
-                                   <i class="fa-solid fa-trash"></i>
+                                <a href="delete-destination.php?id=<?php echo $row['id']; ?>" class="icon-btn delete-btn"
+                                    onclick="return confirm('Are you sure you want to delete this destination?');">
+                                    <i class="fa-solid fa-trash"></i>
                                 </a>
                             </td>
                         </tr>

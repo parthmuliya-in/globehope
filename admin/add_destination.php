@@ -4,7 +4,7 @@ include "header.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $title   = trim($_POST['title']);
+    $title = trim($_POST['title']);
     $alt_tag = trim($_POST['alt_tag']);
 
     if (empty($title) || empty($alt_tag) || empty($_FILES['image']['name'])) {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_file = $target_dir . $image_name;
 
     // Validate extension
-    $allowed = ['jpg','jpeg','png','webp'];
+    $allowed = ['jpg', 'jpeg', 'png', 'webp'];
     $ext = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
 
     if (!in_array($ext, $allowed)) {
@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
 
-        $stmt = mysqli_prepare($conn, 
+        $stmt = mysqli_prepare(
+            $conn,
             "INSERT INTO destinations (title, image, alt_tag) VALUES (?, ?, ?)"
         );
         mysqli_stmt_bind_param($stmt, "sss", $title, $image_name, $alt_tag);

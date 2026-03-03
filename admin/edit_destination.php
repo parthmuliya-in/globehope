@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($result);
 ========================= */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $title   = trim($_POST['title']);
+    $title = trim($_POST['title']);
     $alt_tag = trim($_POST['alt_tag']);
 
     if (empty($title) || empty($alt_tag)) {
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $target_dir = "../destination/";
         $target_file = $target_dir . $new_image;
 
-        $allowed = ['jpg','jpeg','png','webp'];
+        $allowed = ['jpg', 'jpeg', 'png', 'webp'];
         $ext = strtolower(pathinfo($new_image, PATHINFO_EXTENSION));
 
         if (!in_array($ext, $allowed)) {
@@ -59,7 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    $stmt = mysqli_prepare($conn, 
+    $stmt = mysqli_prepare(
+        $conn,
         "UPDATE destinations SET title=?, image=?, alt_tag=? WHERE id=?"
     );
     mysqli_stmt_bind_param($stmt, "sssi", $title, $image_name, $alt_tag, $id);
@@ -82,20 +83,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="form-group">
             <label>Destination Title</label>
-            <input type="text" name="title" 
-                   value="<?php echo htmlspecialchars($row['title']); ?>" required>
+            <input type="text" name="title" value="<?php echo htmlspecialchars($row['title']); ?>" required>
         </div>
 
         <div class="form-group">
             <label>Alt Tag</label>
-            <input type="text" name="alt_tag" 
-                   value="<?php echo htmlspecialchars($row['alt_tag']); ?>" required>
+            <input type="text" name="alt_tag" value="<?php echo htmlspecialchars($row['alt_tag']); ?>" required>
         </div>
 
         <div class="form-group">
             <label>Current Image</label><br>
-            <img src="../destination/<?php echo $row['image']; ?>" 
-                 style="width:120px; height:90px; object-fit:cover; border-radius:6px; border:2px solid #cb5626;">
+            <img src="../destination/<?php echo $row['image']; ?>"
+                style="width:120px; height:90px; object-fit:cover; border-radius:6px; border:2px solid #cb5626;">
         </div>
 
         <div class="form-group">

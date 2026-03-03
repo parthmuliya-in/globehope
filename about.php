@@ -260,33 +260,34 @@
   <!-- ***************************************** Why Choose end ***************************************** -->
   <!-- ***************************************** SECTION 10 ***************************************** -->
   <!-- ***************************************** WHY US SECTION ***************************************** -->
-    <?php
-     include "footer.php";
-    ?>
+  <?php
+  include "footer.php";
+  ?>
   <script>
     var wrapper = document.querySelector(".icons-section-wraper");
-  var slide = wrapper.querySelector(".icons-section");
+    var slide = wrapper.querySelector(".icons-section");
 
-  var leftBtn = wrapper.querySelector(".hs-arrow.left");
-  var rightBtn = wrapper.querySelector(".hs-arrow.right");
+    var leftBtn = wrapper.querySelector(".hs-arrow.left");
+    var rightBtn = wrapper.querySelector(".hs-arrow.right");
 
-  // Calculate card width including gap
-  var card = slide.querySelector(".icon-card");
-  var style = getComputedStyle(card);
-  var gap = parseInt(style.marginRight) || 20; // gap from CSS
-  var cardWidth = card.offsetWidth + gap;       // card width + gap
+    // Calculate card width including gap
+    var card = slide.querySelector(".icon-card");
+    var style = getComputedStyle(card);
+    var gap = parseInt(style.marginRight) || 20; // gap from CSS
+    var cardWidth = card.offsetWidth + gap;       // card width + gap
 
-  rightBtn.onclick = function () {
-    slide.scrollLeft += cardWidth * 2;   // scroll exact 2 cards
-  };
+    rightBtn.onclick = function () {
+      slide.scrollLeft += cardWidth * 2;   // scroll exact 2 cards
+    };
 
-  leftBtn.onclick = function () {
-    slide.scrollLeft -= cardWidth * 2;   // scroll exact 2 cards
-  };
+    leftBtn.onclick = function () {
+      slide.scrollLeft -= cardWidth * 2;   // scroll exact 2 cards
+    };
   </script>
-  
-  
-<script src="assets/js/travel-header.js"></script>
-<script src="assets/js/about.js"></script>
+
+
+  <script src="assets/js/travel-header.js"></script>
+  <script src="assets/js/about.js"></script>
 </body>
+
 </html>

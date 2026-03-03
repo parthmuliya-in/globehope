@@ -10,7 +10,7 @@ if (isset($_SESSION['error'])) {
 
 // If OTP not sent, redirect
 if (!isset($_SESSION['otp_sent']) || $_SESSION['otp_sent'] !== true) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 

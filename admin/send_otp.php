@@ -16,7 +16,7 @@ if (!isset($_POST['email'], $_POST['password'])) {
     exit;
 }
 
-$email    = trim($_POST['email']);
+$email = trim($_POST['email']);
 $password = $_POST['password'];
 
 /* ---------- CHECK ADMIN ---------- */
@@ -39,7 +39,7 @@ if (!password_verify($password, $admin['password'])) {
 }
 
 /* ---------- GENERATE OTP ---------- */
-$otp    = random_int(100000, 999999);
+$otp = random_int(100000, 999999);
 $expiry = date("Y-m-d H:i:s", strtotime("+5 minutes"));
 
 $stmt2 = mysqli_prepare(
@@ -56,21 +56,21 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
-    $mail->SMTPAuth   = true;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
 
     // 🔐 PUT YOUR DETAILS HERE
-    $mail->Username   = 'parthmuliya02@gmail.com';
-    $mail->Password   = 'sbdszsstzgzyaqpn';
+    $mail->Username = 'parthmuliya02@gmail.com';
+    $mail->Password = 'sbdszsstzgzyaqpn';
 
     $mail->SMTPSecure = 'tls';
-    $mail->Port       = 587;
+    $mail->Port = 587;
 
     $mail->setFrom('parthmuliya02@gmail.com', 'Admin Login');
     $mail->addAddress($email);
 
     $mail->Subject = 'Admin Login OTP';
-    $mail->Body    = "Your OTP is: $otp\nValid for 5 minutes.";
+    $mail->Body = "Your OTP is: $otp\nValid for 5 minutes.";
 
     $mail->send();
 } catch (Exception $e) {
@@ -83,6 +83,6 @@ try {
 header("Location: verify_otp.php");
 // After OTP sent successfully
 $_SESSION['otp_email'] = $email;   // store email
-$_SESSION['otp_sent']  = true;     // mark OTP as sent
-$_SESSION['otp_time']  = time();   // store time (for 5 min expiry)
+$_SESSION['otp_sent'] = true;     // mark OTP as sent
+$_SESSION['otp_time'] = time();   // store time (for 5 min expiry)
 exit;

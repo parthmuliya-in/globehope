@@ -4,11 +4,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "AlternateGotNo1D", sans-serif;
- 
- 
+
+
 }
 
-#bb{
+#bb {
   display: none;
 }
 
@@ -414,11 +414,13 @@ ul {
 
 main {
   width: 100%;
-  /*overflow-x: hidden;*/   /* Prevent horizontal scroll */
+  /*overflow-x: hidden;*/
+  /* Prevent horizontal scroll */
 }
 
 /*html, body {
-  overflow-x: hidden;*/   /* Extra safety */
+  overflow-x: hidden;*/
+/* Extra safety */
 /*}*/
 
 .hero-slider {
@@ -426,7 +428,8 @@ main {
   height: 85vh;
   width: 100%;
   overflow: hidden;
-  touch-action: pan-y;   /* Prevent horizontal swipe shift */
+  touch-action: pan-y;
+  /* Prevent horizontal swipe shift */
 }
 
 .slide {
@@ -441,7 +444,8 @@ main {
   background-position: center;
 
   opacity: 0;
-  transform: scale(1.1);   /* Desktop zoom effect */
+  transform: scale(1.1);
+  /* Desktop zoom effect */
   transition: opacity 1s ease, transform 1s ease;
 
   z-index: 0;
@@ -449,7 +453,8 @@ main {
 
 .slide.active {
   opacity: 1;
-  transform: scale(1);   /* Desktop active zoom */
+  transform: scale(1);
+  /* Desktop active zoom */
   z-index: 1;
 }
 
@@ -691,7 +696,7 @@ main {
 .icon-slider-wrapper {
   position: relative;
   width: 100%;
-  
+
 }
 
 /* ================= ARROWS ================= */
@@ -700,7 +705,8 @@ main {
   position: absolute;
   right: 30px;
   top: -45px;
-  display: none; /* ✅ Desktop me hidden */
+  display: none;
+  /* ✅ Desktop me hidden */
   gap: 10px;
   z-index: 10;
 }
@@ -722,12 +728,14 @@ main {
   color: #fff;
 }
 
-.arrow-btn left{
+.arrow-btn left {
   right: 80px;
 }
-.arrow-btn right{
+
+.arrow-btn right {
   right: 20px;
 }
+
 /* ================= SECTION ================= */
 
 .premium-icon-section {
@@ -735,7 +743,8 @@ main {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: space-between;
-   padding: 20px 15px; /* Add horizontal padding */
+  padding: 20px 15px;
+  /* Add horizontal padding */
 }
 
 /* ================= CARD ================= */
@@ -828,7 +837,8 @@ main {
   }
 
   .slider-arrows {
-    display: flex; /* ✅ Only responsive me show */
+    display: flex;
+    /* ✅ Only responsive me show */
     position: static;
     justify-content: flex-end;
     margin: 20px 25px 15px 0;
@@ -1043,13 +1053,13 @@ main {
 
   /* BIG IMAGE stays absolute-style look */
   .big-img {
-   
+
     display: none;
   }
 
   /* SMALL IMAGE still overlaps */
   .small-img {
-  
+
     display: none;
   }
 
@@ -1066,12 +1076,12 @@ main {
 
 
   .big-img {
-  /*   height: 460px; */
-  display: none;
+    /*   height: 460px; */
+    display: none;
   }
 
   .small-img {
-   /*  width: 200px;
+    /*  width: 200px;
     height: 220px;
     left: -20px; */
     display: none;
@@ -1082,169 +1092,169 @@ main {
 /* ***************************************** SECTION 6 *****************************************  */
 
 /* *************************************** IMAGES  Start your Journey STARTS ******************************************************* */
- 
+
 /* SECTION */
-    .image-section {
-      padding: 10px 11px 80px;
-      position: relative;
-      overflow: hidden;
-      
-    }
+.image-section {
+  padding: 10px 11px 80px;
+  position: relative;
+  overflow: hidden;
 
-    /* TITLE */
-    .title-row h2 {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 70px;
-      position: relative;
-    }
+}
 
-    .title-row h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 3px;
-      background-color: #cb5725;
-      border-radius: 2px;
-    }
+/* TITLE */
+.title-row h2 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 70px;
+  position: relative;
+}
 
-    /* DESKTOP GRID */
-    .images-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+.title-row h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 3px;
+  background-color: #cb5725;
+  border-radius: 2px;
+}
 
-    .img-box {
-      position: relative;
-      width: 220px;
-      height: 350px;
-      text-decoration: none;
-      border-radius: 12px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+/* DESKTOP GRID */
+.images-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
 
-    .img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.img-box {
+  position: relative;
+  width: 220px;
+  height: 350px;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
 
-    .img-box span {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-      font-weight: 600;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.45);
-      transition: 0.3s;
-    }
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .img-box:hover span {
-      background: rgba(0, 0, 0, 0.65);
-    }
-
-    .img-box::before {
-      content: "";
-      position: absolute;
-      inset: 11px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 12px;
-      pointer-events: none;
-      box-sizing: border-box;
-      z-index: 2;
-    }
-
-    /* SLIDER BUTTONS */
-    .slider-controls {
-      display: none;
-    }
-
-    /* ---------------- RESPONSIVE ---------------- */
-    @media (max-width: 992px) {
-
-      .images-row {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        margin-bottom: 0;
-        padding: 0;
-        margin-top: 60px;
-      }
-
-      .images-row::-webkit-scrollbar {
-        display: none;
-      }
-
-      .slider-controls {
-        display: flex;
-        gap: 8px;
-        position: absolute;
-        top: 0;
-        right: 20px;
-        z-index: 10;
-       
-      }
-
-      /* ===== SLIDER BUTTONS ===== */
-.slider-controls button {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #cb5626;
-  background: #fff;
-  color: #cb5626;
-  cursor: pointer;
-  font-size: 18px;
+.img-box span {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
- }
-
-/* Hover effect on buttons */
-.slider-controls button:hover {
-  background: #cb5626;
+  font-size: 19px;
+  font-weight: 600;
   color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  transition: 0.3s;
+}
+
+.img-box:hover span {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.img-box::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* SLIDER BUTTONS */
+.slider-controls {
+  display: none;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 992px) {
+
+  .images-row {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 60px;
   }
 
-      /* Responsive flex widths */
-      @media (max-width: 992px) {
-        .img-box {
-          flex: 0 0 32%;
-        }
-      }
+  .images-row::-webkit-scrollbar {
+    display: none;
+  }
 
-      /* 3 slides */
-      @media (max-width: 768px) {
-        .img-box {
-          flex: 0 0 48%;
-          width: 50%;
-          height: 300px;
-        }
-      }
+  .slider-controls {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 10;
 
-      /* 2 slides */
-      @media (max-width: 576px) {
-        .img-box {
-          flex: 0 0 48%;
-          margin-right: 0;
-        }
-      }
+  }
 
-      /* 1 slide */
+  /* ===== SLIDER BUTTONS ===== */
+  .slider-controls button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #cb5626;
+    background: #fff;
+    color: #cb5626;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hover effect on buttons */
+  .slider-controls button:hover {
+    background: #cb5626;
+    color: #fff;
+  }
+
+  /* Responsive flex widths */
+  @media (max-width: 992px) {
+    .img-box {
+      flex: 0 0 32%;
     }
-    
-   
+  }
+
+  /* 3 slides */
+  @media (max-width: 768px) {
+    .img-box {
+      flex: 0 0 48%;
+      width: 50%;
+      height: 300px;
+    }
+  }
+
+  /* 2 slides */
+  @media (max-width: 576px) {
+    .img-box {
+      flex: 0 0 48%;
+      margin-right: 0;
+    }
+  }
+
+  /* 1 slide */
+}
+
+
 /* *************************************** IMAGES  Start your Journey ENDS ******************************************************* */
 
 
@@ -1487,7 +1497,7 @@ main {
     right: -10px;
     bottom: 15px;
   }
-  
+
   .hs-arrow {
     top: 8px;
     height: 30px;
@@ -1563,7 +1573,8 @@ main {
 
 /* ================= SLIDES ================= */
 .row-3-slide {
-   min-width: 24%; /* 24% - thoda gap adjust ke liye */
+  min-width: 24%;
+  /* 24% - thoda gap adjust ke liye */
   height: 440px;
   background-size: cover;
   background-position: center;
@@ -2284,11 +2295,11 @@ main {
     font-size: 13px;
   }
 } */
- /* change */
- /* ================= MOBILE SLIDER MODE ================= */
+/* change */
+/* ================= MOBILE SLIDER MODE ================= */
 
 
- /* cjhange end */
+/* cjhange end */
 
 /* @media(max-width:600px) {
   .why-choose-title {
@@ -2339,46 +2350,48 @@ main {
   .icons-section{
     display: flex;
     flex-wrap: nowrap;      /* slider jaisa */
-    /* overflow-x: auto; */
-    /* scroll-snap-type: x mandatory;
+/* overflow-x: auto; */
+/* scroll-snap-type: x mandatory;
     scroll-behavior: smooth; */
-    /* justify-content: space-evenly; */
-  /* } */
+/* justify-content: space-evenly; */
+/* } */
 
-  
-@media(max-width:992px){
-  .icons-section-wraper{
+
+@media(max-width:992px) {
+  .icons-section-wraper {
     overflow: hidden;
-    padding:10px;
-     position: relative;
-   
+    padding: 10px;
+    position: relative;
+
   }
 
-  .icons-section{
+  .icons-section {
     /* display: flex; */
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
     /*gap: 35px;*/
-    scroll-snap-type: x mandatory;  /* ✨ snap to cards */
+    scroll-snap-type: x mandatory;
+    /* ✨ snap to cards */
     justify-content: flex-start;
     padding: 41px 0;
   }
 
-  .icons-section::-webkit-scrollbar{
+  .icons-section::-webkit-scrollbar {
     display: none;
   }
 
-  .icon-card{
+  .icon-card {
     flex: 0 0 calc((100% - 20px)/2);
     max-width: calc((100% - 20px)/2);
-     /* flex: 0 0 calc((100% - 0px)/2);
+    /* flex: 0 0 calc((100% - 0px)/2);
     max-width: calc((100% - 0px)/2); */
-    scroll-snap-align: start;       /* snap start */
+    scroll-snap-align: start;
+    /* snap start */
     padding: 20px 17px;
   }
 
-  .why-choose-title{
+  .why-choose-title {
     /* display: flex; */
     justify-content: space-between;
     align-items: center;
@@ -2386,7 +2399,7 @@ main {
   }
 
   .why-choose-btn-left,
-  .why-choose-btn-right{
+  .why-choose-btn-right {
     display: inline-block;
     background: #c95723;
     color: #fff;
@@ -2396,10 +2409,12 @@ main {
     font-size: 18px;
     border-radius: 5px;
   }
-  .btn-postion{
+
+  .btn-postion {
     top: 70px;
   }
-  #bb{
+
+  #bb {
     display: inline-block;
   }
 }
@@ -2414,99 +2429,107 @@ main {
 
 
 /* ================= SECTION ================= */
-.logo-section{
-    padding: 40px 0 50px 0;
-    background:#ffffff;
-    overflow:hidden;
-    border-bottom: 2px solid rgba(201, 87, 35, 0.1);
+.logo-section {
+  padding: 40px 0 50px 0;
+  background: #ffffff;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(201, 87, 35, 0.1);
 }
 
 /* ================= SLIDER ================= */
-.logo-slider{
-    position:relative;
-    width:100%;
-    overflow:hidden;
-    padding: 30px 0 10px 0;
+.logo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0 10px 0;
 }
 
 /* Track */
-.logo-track{
-    display:flex;
-    align-items:center;
-    gap:80px;
-    width:max-content;
-    animation: scrollRight 45s linear infinite;
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: scrollRight 45s linear infinite;
 }
 
 /* Smooth animation - rightwards */
-@keyframes scrollRight{
-    from { transform: translateX(-50%); }
-    to   { transform: translateX(0); }
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Pause on hover */
-.logo-slider:hover .logo-track{
-    animation-play-state:paused;
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
 }
 
 /* ================= LOGO ITEM ================= */
-.logo-item{
-    width:auto;
-    height:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:none;
-    border-radius:0;
-    box-shadow:none;
-    transition:0.4s ease;
-    flex-shrink:0;
+.logo-item {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: 0.4s ease;
+  flex-shrink: 0;
 }
 
 /* Logo image */
-.logo-item img{
-    max-width:160px;   /* Desktop size */
-    max-height:90px;
-    object-fit:contain;
-    display:block;
-    transition: transform 0.4s ease;
+.logo-item img {
+  max-width: 160px;
+  /* Desktop size */
+  max-height: 90px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 /* Hover zoom */
-.logo-item:hover img{
-    transform: scale(1.1);
+.logo-item:hover img {
+  transform: scale(1.1);
 }
 
 /* ================= RESPONSIVE ================= */
-@media(max-width:1024px){
-    .logo-item img{
-        max-width:100px;
-        max-height:80px;
-    }
+@media(max-width:1024px) {
+  .logo-item img {
+    max-width: 100px;
+    max-height: 80px;
+  }
 }
 
-@media(max-width:768px){
-    .logo-track{
-        gap:40px;
-        animation: scrollRight 30s linear infinite;
-    }
-    .logo-item img{
-        max-width:100px;
-        max-height:80px;
-    }
+@media(max-width:768px) {
+  .logo-track {
+    gap: 40px;
+    animation: scrollRight 30s linear infinite;
+  }
+
+  .logo-item img {
+    max-width: 100px;
+    max-height: 80px;
+  }
 }
 
-@media(max-width:480px){
-    .logo-track{
-        gap:35px;
-        animation: scrollRight 20s linear infinite;
-    }
-    .logo-item img{
-        max-width:80px;
-        max-height:60px;
-    }
+@media(max-width:480px) {
+  .logo-track {
+    gap: 35px;
+    animation: scrollRight 20s linear infinite;
+  }
+
+  .logo-item img {
+    max-width: 80px;
+    max-height: 60px;
+  }
 }
-    
+
 
 /* ***************************************** SECTION 11 *****************************************  */
 /* ***************************************** GET IN TOUCH HOME *****************************************  */

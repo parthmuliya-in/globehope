@@ -8,7 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/images/fav.png" type="image/png">
 
   <link rel="stylesheet" href="assets/css/service.css">
@@ -19,7 +19,7 @@
 
   <!-- ***************************************** HEADER START ***************************************** -->
   <?php
-    include "header.php";  
+  include "header.php";
   ?>
   <!-- ***************************************** HEADER  ENDS ***************************************** -->
 
@@ -222,31 +222,31 @@
 
   <!-- ***************************************** WHY US SECTION ***************************************** -->
   <?php
-   include "footer.php";
+  include "footer.php";
   ?>
 
   <script>
     var wrapper = document.querySelector(".icons-section-wraper");
-  var slide = wrapper.querySelector(".icons-section");
+    var slide = wrapper.querySelector(".icons-section");
 
-  var leftBtn = wrapper.querySelector(".hs-arrow.left");
-  var rightBtn = wrapper.querySelector(".hs-arrow.right");
+    var leftBtn = wrapper.querySelector(".hs-arrow.left");
+    var rightBtn = wrapper.querySelector(".hs-arrow.right");
 
-  // Calculate card width including gap
-  var card = slide.querySelector(".icon-card");
-  var style = getComputedStyle(card);
-  var gap = parseInt(style.marginRight) || 20; // gap from CSS
-  var cardWidth = card.offsetWidth + gap;       // card width + gap
+    // Calculate card width including gap
+    var card = slide.querySelector(".icon-card");
+    var style = getComputedStyle(card);
+    var gap = parseInt(style.marginRight) || 20; // gap from CSS
+    var cardWidth = card.offsetWidth + gap;       // card width + gap
 
-  rightBtn.onclick = function () {
-    slide.scrollLeft += cardWidth * 2;   // scroll exact 2 cards
-  };
+    rightBtn.onclick = function () {
+      slide.scrollLeft += cardWidth * 2;   // scroll exact 2 cards
+    };
 
-  leftBtn.onclick = function () {
-    slide.scrollLeft -= cardWidth * 2;   // scroll exact 2 cards
-  };
+    leftBtn.onclick = function () {
+      slide.scrollLeft -= cardWidth * 2;   // scroll exact 2 cards
+    };
   </script>
-  
+
   <script src="assets/js/travel-header.js"></script>
   <script src="assets/js/service.js"></script>
 </body>

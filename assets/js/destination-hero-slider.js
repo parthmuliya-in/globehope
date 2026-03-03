@@ -1,11 +1,11 @@
 
 const destinationSlides = document.querySelectorAll(".destination-slide");
-const destinationTabs   = document.querySelectorAll(".destination-slider-tab");
-const destinationWrap   = document.querySelector(".destination-slides");
+const destinationTabs = document.querySelectorAll(".destination-slider-tab");
+const destinationWrap = document.querySelector(".destination-slides");
 
 let destinationIndex = 0;
 
-function updateDestinationSlider(){
+function updateDestinationSlider() {
   destinationWrap.style.transform =
     `translateX(-${destinationIndex * 100}%)`;
 
@@ -17,21 +17,21 @@ function updateDestinationSlider(){
 }
 
 // Auto-play
-let sliderInterval = setInterval(()=>{
+let sliderInterval = setInterval(() => {
   destinationIndex = (destinationIndex + 1) % destinationSlides.length;
   updateDestinationSlider();
 }, 4500);
 
 // Click on tabs
-destinationTabs.forEach((tab,index)=>{
-  tab.addEventListener("click", ()=>{
+destinationTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
     destinationIndex = index;
     updateDestinationSlider();
     clearInterval(sliderInterval);
-    sliderInterval = setInterval(()=>{
+    sliderInterval = setInterval(() => {
       destinationIndex = (destinationIndex + 1) % destinationSlides.length;
       updateDestinationSlider();
-    },4500);
+    }, 4500);
   });
 });
 
