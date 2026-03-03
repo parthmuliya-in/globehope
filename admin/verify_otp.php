@@ -18,7 +18,7 @@ if (!isset($_SESSION['otp_sent']) || $_SESSION['otp_sent'] !== true) {
 if (isset($_SESSION['otp_time']) && (time() - $_SESSION['otp_time']) > 300) {
     unset($_SESSION['otp_sent']);
     unset($_SESSION['otp_email']);
-    header("Location: login.php?error=timeout");
+    header("Location: index.php?error=timeout");
     exit();
 }
 ?>

@@ -70,7 +70,7 @@ $enquiries = mysqli_query($conn, "SELECT * FROM contact_enquiries ORDER BY id DE
 
 <body>
 
-    <div class="dashboard-title">Admin Dashboard Overview</div>
+    <!-- <div class="dashboard-title">Admin Dashboard Overview</div> -->
 
     <!-- STAT CARDS -->
     <div class="cards">

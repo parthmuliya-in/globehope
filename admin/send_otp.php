@@ -12,7 +12,7 @@ require __DIR__ . '/PHPMailer/src/SMTP.php';
 /* ---------- INPUT CHECK ---------- */
 if (!isset($_POST['email'], $_POST['password'])) {
     $_SESSION['error'] = "Invalid request";
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -27,14 +27,14 @@ $result = mysqli_stmt_get_result($stmt);
 
 if (!$admin = mysqli_fetch_assoc($result)) {
     $_SESSION['error'] = "Invalid login details";
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
 /* ---------- VERIFY PASSWORD ---------- */
 if (!password_verify($password, $admin['password'])) {
     $_SESSION['error'] = "Invalid login details";
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -75,7 +75,7 @@ try {
     $mail->send();
 } catch (Exception $e) {
     $_SESSION['error'] = "OTP email sending failed";
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
